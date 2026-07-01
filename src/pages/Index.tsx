@@ -6,6 +6,7 @@ import HeroSection from "@/components/HeroSection";
 import MenuSection from "@/components/MenuSection";
 import HowItWorks from "@/components/HowItWorks";
 import DownloadSection from "@/components/DownloadSection";
+import CareerSection from "@/components/CareerSection";
 import AboutContact from "@/components/AboutContact";
 import Footer from "@/components/Footer";
 
@@ -33,6 +34,10 @@ const Index = () => {
         {/* Download */}
         <div id="download">
           <DownloadSection />
+        </div>
+        {/* Careers */}
+        <div id="careers">
+          <CareerSection />
         </div>
         {/* About & Contact */}
         <div id="about">

@@ -17,7 +17,7 @@ const BannerCarousel = () => {
 
   useEffect(() => {
     if (isPaused) return;
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(next, 2000);
     return () => clearInterval(timer);
   }, [isPaused, next]);
 
@@ -89,8 +89,8 @@ const BannerCarousel = () => {
               onClick={() => setCurrent(i)}
               aria-label={`Go to banner ${i + 1}`}
               className={`transition-all duration-400 rounded-full ${i === current
-                  ? "bg-yellow-400 w-8 h-2.5"
-                  : "bg-white/50 hover:bg-white/80 w-2.5 h-2.5"
+                ? "bg-yellow-400 w-8 h-2.5"
+                : "bg-white/50 hover:bg-white/80 w-2.5 h-2.5"
                 }`}
             />
           ))}
