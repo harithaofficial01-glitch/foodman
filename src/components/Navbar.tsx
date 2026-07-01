@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Menu, X, Download } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "@/assets/foodman-logo.png";
+import logo from "@/assets/fm-scooter.png";
 
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.thambiorutea2";
 

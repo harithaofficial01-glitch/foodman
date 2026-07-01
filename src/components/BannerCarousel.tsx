@@ -17,27 +17,27 @@ const BannerCarousel = () => {
 
   useEffect(() => {
     if (isPaused) return;
-    const timer = setInterval(next, 4500);
+    const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
   }, [isPaused, next]);
 
   return (
-    <section className="pt-[73px] pb-0 bg-black">
+    <section className="pt-[74px] pb-0 bg-black">
       <div
         className="relative w-full overflow-hidden group"
-        style={{ aspectRatio: "16/6" }}
+        style={{ aspectRatio: "16/9" }}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           <motion.img
             key={current}
             src={banners[current]}
             alt={`Food Man banner ${current + 1}`}
             className="absolute inset-0 w-full h-full object-cover"
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.97 }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-100%" }}
             transition={{ duration: 0.7, ease: "easeInOut" }}
           />
         </AnimatePresence>
@@ -88,11 +88,10 @@ const BannerCarousel = () => {
               key={i}
               onClick={() => setCurrent(i)}
               aria-label={`Go to banner ${i + 1}`}
-              className={`transition-all duration-400 rounded-full ${
-                i === current
+              className={`transition-all duration-400 rounded-full ${i === current
                   ? "bg-yellow-400 w-8 h-2.5"
                   : "bg-white/50 hover:bg-white/80 w-2.5 h-2.5"
-              }`}
+                }`}
             />
           ))}
         </div>
