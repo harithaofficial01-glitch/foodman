@@ -15,16 +15,18 @@ interface ClauseProps {
   title: string;
   items: string[];
   index: number;
+  id?: string;
 }
 
-const Clause = ({ title, items, index }: ClauseProps) => (
+const Clause = ({ title, items, index, id }: ClauseProps) => (
   <motion.div
+    id={id}
     custom={index}
     variants={fadeUp}
     initial="hidden"
     whileInView="show"
     viewport={{ once: true }}
-    className="mb-6"
+    className="mb-6 scroll-mt-28"
   >
     <h4 className="text-base font-bold text-foreground mb-2">{title}</h4>
     <ul className="space-y-1">
@@ -122,6 +124,7 @@ const TermsPrivacy = () => {
             ]}
           />
           <Clause
+            id="delivery"
             index={2}
             title="3. Delivery Policy"
             items={[
@@ -131,6 +134,7 @@ const TermsPrivacy = () => {
             ]}
           />
           <Clause
+            id="refund"
             index={3}
             title="4. Refund & Cancellation"
             items={[

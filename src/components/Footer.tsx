@@ -14,8 +14,8 @@ const footerLinks = {
   legal: [
     { href: "/terms-privacy#terms", label: "Terms & Conditions" },
     { href: "/terms-privacy#privacy", label: "Privacy Policy" },
-    { href: "/terms-privacy#terms", label: "Refund Policy" },
-    { href: "/terms-privacy#terms", label: "Delivery Policy" },
+    { href: "/terms-privacy#refund", label: "Refund Policy" },
+    { href: "/terms-privacy#delivery", label: "Delivery Policy" },
   ],
 };
 
