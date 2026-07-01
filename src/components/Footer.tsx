@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Instagram, Facebook, Twitter } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/foodman-logo.png";
 
 const footerLinks = {
@@ -11,10 +12,10 @@ const footerLinks = {
     { href: "#about", label: "About & Contact" },
   ],
   legal: [
-    { href: "#about", label: "Terms & Conditions" },
-    { href: "#about", label: "Privacy Policy" },
-    { href: "#about", label: "Refund Policy" },
-    { href: "#about", label: "Delivery Policy" },
+    { href: "/terms-privacy#terms", label: "Terms & Conditions" },
+    { href: "/terms-privacy#privacy", label: "Privacy Policy" },
+    { href: "/terms-privacy#terms", label: "Refund Policy" },
+    { href: "/terms-privacy#terms", label: "Delivery Policy" },
   ],
 };
 
@@ -53,9 +54,8 @@ const Footer = () => {
             {/* Social icons */}
             <div className="flex gap-3">
               {[
-                { icon: Instagram, href: "#", color: "hsl(330,80%,60%)" },
+                { icon: Instagram, href: "https://www.instagram.com/foodman.official?igsh=MW94ZHY2bmw3cTZ4bQ==", color: "hsl(330,80%,60%)" },
                 { icon: Facebook, href: "#", color: "hsl(220,70%,55%)" },
-                { icon: Twitter, href: "#", color: "hsl(200,80%,55%)" },
               ].map(({ icon: Icon, href, color }) => (
                 <motion.a
                   key={color}
@@ -97,12 +97,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-white/50 text-sm hover:text-yellow-400 transition-colors duration-200"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

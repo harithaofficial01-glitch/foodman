@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import TermsPrivacy from "./pages/TermsPrivacy";
 
 const queryClient = new QueryClient();
 
@@ -10,6 +11,7 @@ const App = () => (
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/terms-privacy" element={<TermsPrivacy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
