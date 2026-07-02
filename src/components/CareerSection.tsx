@@ -6,6 +6,7 @@ import {
     IndianRupee,
     CheckCircle,
     Users,
+    Sparkles,
 } from "lucide-react";
 
 const CareerSection = () => {
@@ -58,8 +59,10 @@ const CareerSection = () => {
                     transition={{ duration: 0.7 }}
                     className="text-center mb-14"
                 >
-                    <div className="inline-block px-5 py-2 rounded-full bg-red-100 text-red-600 text-xs font-black tracking-[0.25em] uppercase">
-                        Careers
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                        <Sparkles className="w-5 h-5 text-yellow-500" />
+                        <span className="section-tag">Careers</span>
+                        <Sparkles className="w-5 h-5 text-yellow-500" />
                     </div>
 
                     <h2 className="text-4xl md:text-6xl font-black mt-6">

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Smartphone, Coffee, Truck, CheckCircle } from "lucide-react";
+import { Smartphone, Coffee, Truck, CheckCircle, Sparkles } from "lucide-react";
 
 const steps = [
   {
@@ -48,7 +48,11 @@ const HowItWorks = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="section-tag">How It Works</span>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Sparkles className="w-5 h-5 text-yellow-500" />
+            <span className="section-tag">How It Works</span>
+            <Sparkles className="w-5 h-5 text-yellow-500" />
+          </div>
           <h2 className="text-4xl md:text-5xl font-black text-foreground mt-4">
             Three Simple{" "}
             <span

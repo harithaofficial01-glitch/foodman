@@ -9,8 +9,8 @@ import DownloadSection from "@/components/DownloadSection";
 import AboutUs from "@/components/AboutUs";
 import Footer from "@/components/Footer";
 import CareerSection from "@/components/CareerSection";
-import { Link } from "react-router-dom";
-import { ArrowRight, Briefcase } from "lucide-react";
+// import { Link } from "react-router-dom";
+// import { ArrowRight, Briefcase } from "lucide-react";
 
 let hasLoadedSplash = false;
 

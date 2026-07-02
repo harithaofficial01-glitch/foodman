@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Coffee, Zap, ShieldCheck, MapPin } from "lucide-react";
+import { Coffee, Zap, ShieldCheck, MapPin, Sparkles } from "lucide-react";
 
 const stats = [
   { value: "50,000+", label: "Cups of Tea served", color: "hsl(4,85%,40%)" },
@@ -29,9 +29,15 @@ const corePillars = [
   },
 ];
 
+
 const AboutUs = () => {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
+      <div className="flex items-right justify-center gap-2 mb-4">
+                <Sparkles className="w-5 h-5 text-yellow-500" />
+                <span className="section-tag">About Us</span>
+                <Sparkles className="w-5 h-5 text-yellow-500" />
+              </div>
       {/* Top accent stripe */}
       <div
         className="absolute top-0 left-0 right-0 h-1.5"
@@ -40,7 +46,7 @@ const AboutUs = () => {
 
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
-          
+
           {/* Left Side: Brand Story & Values */}
           <div className="lg:col-span-7 space-y-8">
             <motion.div
@@ -49,7 +55,7 @@ const AboutUs = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="section-tag mb-4">About Us</span>
+              
               <h2 className="text-4xl md:text-5xl font-black text-foreground mt-2 leading-tight">
                 Welcome to{" "}
                 <span className="text-gradient-red">Food Man</span>
