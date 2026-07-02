@@ -5,17 +5,18 @@ import logo from "@/assets/foodman-logo.png";
 
 const footerLinks = {
   navigation: [
-    { href: "#home", label: "Home" },
-    { href: "#menu", label: "Menu" },
-    { href: "#how-it-works", label: "How It Works" },
-    { href: "#download", label: "Download App" },
-    { href: "#about", label: "About & Contact" },
+    { href: "/#home", label: "Home" },
+    { href: "/#menu", label: "Menu" },
+    { href: "/#how-it-works", label: "How It Works" },
+    { href: "/#download", label: "Download App" },
+    { href: "/#about", label: "About Us" },
+    { href: "/#careers", label: "Careers" },
   ],
   legal: [
-    { href: "/terms-privacy#terms", label: "Terms & Conditions" },
-    { href: "/terms-privacy#privacy", label: "Privacy Policy" },
-    { href: "/terms-privacy#refund", label: "Refund Policy" },
-    { href: "/terms-privacy#delivery", label: "Delivery Policy" },
+    { href: "/terms-conditions", label: "Terms & Conditions" },
+    { href: "/privacy-policy", label: "Privacy Policy" },
+    { href: "/refund-policy", label: "Refund Policy" },
+    { href: "/delivery-policy", label: "Delivery Policy" },
   ],
 };
 
@@ -42,7 +43,29 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <img src={logo} alt="Food Man" className="h-16 brightness-0 invert opacity-90 mb-4" />
+            {/* White disc for logo contrast */}
+            <div
+              className="absolute rounded-full bg-white"
+              style={{ width: 62, height: 62, opacity: 0.96 }}
+            />
+
+            {/* The logo — scooter ride bounce + tilt */}
+            <motion.img
+              src={logo}
+              alt="Food Man"
+              className="relative h-[60px] md:h-[88px] w-auto object-contain drop-shadow-lg"
+              animate={{
+                y: [0, -4, -1, -5, 0, -3, 0],
+                rotate: [-0.8, 0.8, -0.5, 1, -0.8, 0.5, -0.8],
+              }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                times: [0, 0.15, 0.3, 0.5, 0.65, 0.82, 1],
+              }}
+            />
+
             <h3 className="text-white font-black text-lg mb-1">Food Man</h3>
             <p className="text-xs text-white/40 mb-3" style={{ color: "hsl(43,100%,55%)" }}>
               Thambi Oru Tea
@@ -78,12 +101,21 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.navigation.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-white/50 text-sm hover:text-yellow-400 transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith("/#") ? (
+                    <a
+                      href={link.href}
+                      className="text-white/50 text-sm hover:text-yellow-400 transition-colors duration-200"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="text-white/50 text-sm hover:text-yellow-400 transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

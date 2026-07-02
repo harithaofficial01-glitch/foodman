@@ -6,16 +6,25 @@ import HeroSection from "@/components/HeroSection";
 import MenuSection from "@/components/MenuSection";
 import HowItWorks from "@/components/HowItWorks";
 import DownloadSection from "@/components/DownloadSection";
-import CareerSection from "@/components/CareerSection";
-import AboutContact from "@/components/AboutContact";
+import AboutUs from "@/components/AboutUs";
 import Footer from "@/components/Footer";
+import CareerSection from "@/components/CareerSection";
+import { Link } from "react-router-dom";
+import { ArrowRight, Briefcase } from "lucide-react";
+
+let hasLoadedSplash = false;
 
 const Index = () => {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(hasLoadedSplash);
+
+  const handleComplete = () => {
+    hasLoadedSplash = true;
+    setLoaded(true);
+  };
 
   return (
     <>
-      {!loaded && <SplashScreen onComplete={() => setLoaded(true)} />}
+      {!loaded && <SplashScreen onComplete={handleComplete} />}
       <div className={`min-h-screen ${!loaded ? "overflow-hidden h-screen" : ""}`}>
         <Navbar />
         {/* Home */}
@@ -35,13 +44,13 @@ const Index = () => {
         <div id="download">
           <DownloadSection />
         </div>
-        {/* Careers */}
+        {/* career */}
         <div id="careers">
           <CareerSection />
         </div>
-        {/* About & Contact */}
+        {/* About Us */}
         <div id="about">
-          <AboutContact />
+          <AboutUs />
         </div>
         <Footer />
       </div>
