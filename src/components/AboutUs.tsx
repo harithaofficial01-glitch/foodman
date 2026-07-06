@@ -32,7 +32,7 @@ const corePillars = [
 
 const AboutUs = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-transparent relative overflow-hidden">
       <div className="flex items-right justify-center gap-2 mb-4">
                 <Sparkles className="w-5 h-5 text-yellow-500" />
                 <span className="section-tag">About Us</span>

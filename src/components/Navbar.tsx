@@ -12,7 +12,7 @@ const navLinks = [
   { href: "#menu", label: "Menu", isStatic: false },
   { href: "#how-it-works", label: "How It Works", isStatic: false },
   { href: "#download", label: "Download", isStatic: false },
-  { href: "#careers", label: "Careers", isStatic: true },
+  { href: "#careers", label: "Careers", isStatic: false },
   { href: "#about", label: "About Us", isStatic: false },
 ];
 

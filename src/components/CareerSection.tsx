@@ -20,7 +20,7 @@ const CareerSection = () => {
     return (
         <section
             id="careers"
-            className="py-24 relative overflow-hidden bg-gradient-to-b from-white via-orange-50 to-white"
+            className="py-24 relative overflow-hidden bg-transparent"
         >
             {/* Background Decorations */}
 
